@@ -1,0 +1,18 @@
+export const EXPENSE_CATEGORIES = [
+  "GROCERIES",
+  "UTILITIES",
+  "TRANSPORTATION",
+  "ENTERTAINMENT",
+  "HEALTH",
+  "SHOPPING",
+  "EDUCATION",
+  "RENT",
+  "OTHER",
+];
+
+export const INCOME_FREQUENCIES = [
+  "WEEKLY",
+  "MONTHLY",
+  "YEARLY",
+  "ONE_TIME",
+];

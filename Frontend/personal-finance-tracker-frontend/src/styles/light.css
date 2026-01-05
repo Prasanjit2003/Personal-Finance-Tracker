@@ -1,0 +1,4 @@
+body[data-theme="light"] {
+  --sidebar-bg: #ffffff;
+  --border-color: #e5e7eb;
+}
