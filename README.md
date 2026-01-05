@@ -17,18 +17,20 @@ This project is designed following **industry best practices**, clean architectu
 ### 💸 Expense & Income Management
 - Add, edit, delete income and expenses
 - Categorize transactions (Food, Rent, Travel, etc.)
-- Monthly and yearly transaction tracking
+- Monthly and yearly transaction tracking and Exporting (CSV or Excel)
 
 ### 📊 Financial Insights & Analytics
 - Monthly expense vs income charts
 - Category-wise spending distribution
 - Forecasting and trend analysis
 - Visual dashboards for better financial decisions
+- Exporting (CSV or Excel)
 
 ### 🎯 Budget Management
 - Set monthly budgets by category
 - Budget vs actual spending comparison
 - Alerts for overspending
+- Exporting (CSV or Excel)
 
 ### 🖥️ User-Friendly Interface
 - Responsive UI (desktop & mobile)
@@ -64,33 +66,6 @@ This project is designed following **industry best practices**, clean architectu
 
 ---
 
-## 📁 Project Structure
-
-Personal-Finance-Tracker/
-│
-├── backend/ # Spring Boot application
-│ ├── controller
-│ ├── service
-│ ├── repository
-│ ├── entity
-│ ├── dto
-│ └── config
-│
-├── frontend/ # React application
-│ ├── components
-│ ├── pages
-│ ├── services
-│ └── assets
-│
-├── database/ # SQL scripts
-│
-└── README.md
-
-yaml
-Copy code
-
----
-
 ## ⚙️ Backend Setup (Spring Boot)
 
 ### Prerequisites
@@ -103,11 +78,8 @@ Copy code
 cd backend
 mvn clean install
 mvn spring-boot:run
-Backend runs on:
+Backend runs on: http://localhost:8080
 
-arduino
-Copy code
-http://localhost:8080
 🎨 Frontend Setup (React)
 Prerequisites
 Node.js (v18+ recommended)
@@ -120,11 +92,8 @@ Copy code
 cd frontend
 npm install
 npm run dev
-Frontend runs on:
+Frontend runs on: http://localhost:5173
 
-arduino
-Copy code
-http://localhost:5173
 🗄️ Database Setup (MySQL)
 Create database:
 
@@ -142,15 +111,31 @@ Tables are auto-created using JPA/Hibernate.
 
 🔌 API Overview
 Method	Endpoint	Description
-POST	/api/auth/register	Register user
-POST	/api/auth/login	Login user
-POST	/api/expenses	Add expense
-GET	/api/expenses	Get expenses
-POST	/api/income	Add income
-GET	/api/dashboard	Dashboard analytics
+
+income-controller
+GET /api/incomes
+POST /api/incomes
+GET /api/incomes/page
+DELETE /api/incomes/{id}
+
+expense-controller
+GET /api/expenses
+POST /api/expenses
+GET /api/expenses/page
+DELETE /api/expenses/{id}
+
+budget-controller
+GET /api/budgets
+POST /api/budgets
+DELETE /api/budgets/{id}
+
+auth-controller
+POST /api/auth/verify-otp
+POST /api/auth/register
+POST /api/auth/login
 
 🧪 Testing
-Backend APIs tested using Postman
+Backend APIs tested using Postman or Swagger
 
 Manual UI testing on multiple screen sizes
 
@@ -163,17 +148,7 @@ Protected API endpoints
 
 Secure role-based access
 
-📌 Resume Highlights (ATS Optimized)
-Developed a full-stack personal finance management system using Spring Boot, React, and MySQL
-
-Implemented JWT-based authentication and secure REST APIs with role-based access control
-
-Designed interactive dashboards with real-time financial insights, charts, and forecasts
-
-Followed clean architecture principles and industry-standard project structure
-
 📈 Future Enhancements
-Export reports (PDF / Excel)
 
 Email notifications
 
